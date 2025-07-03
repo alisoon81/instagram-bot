@@ -1,3 +1,4 @@
 instagrapi
 langdetect
+Flask
 schedule

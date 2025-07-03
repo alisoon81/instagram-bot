@@ -2,10 +2,10 @@ import json
 import random
 import time
 from datetime import datetime, timedelta
-
 from instagrapi import Client
 from langdetect import detect
 import schedule
+import os
 
 # ========== تنظیمات ==========
 MIN_FOLLOW = 15
@@ -15,8 +15,9 @@ FOLLOWED_FILE = "followed.json"
 PROXY = None  # مثلا "http://username:password@proxy_ip:port" اگر داری پراکسی بذار اینجا
 
 # ========== ورود دستی ==========
-USERNAME = input("Instagram Username: ")
-PASSWORD = input("Instagram Password: ")
+USERNAME = os.getenv("INSTA_USERNAME")
+PASSWORD = os.getenv("INSTA_PASSWORD")
+
 
 cl = Client()
 if PROXY:

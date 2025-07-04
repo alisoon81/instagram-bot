@@ -2,3 +2,4 @@ instagrapi
 langdetect
 Flask
 schedule
+pillow>=8.1.1

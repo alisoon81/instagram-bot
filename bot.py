@@ -1,6 +1,7 @@
 import json
 import random
 import time
+import os
 from datetime import datetime, timedelta
 from instagrapi import Client
 from langdetect import detect
@@ -15,8 +16,8 @@ HASHTAGS = ["خنده", "طنز", "ایران", "بازیگر", "تهران", "�
 FOLLOWED_FILE = "followed.json"
 
 # ========== ورود دستی ==========
-USERNAME = input("Instagram Username: ")
-PASSWORD = input("Instagram Password: ")
+USERNAME = os.environ.get("IG_USERNAME")
+PASSWORD = os.environ.get("IG_PASSWORD")
 
 cl = Client()
 cl.login(USERNAME, PASSWORD)
